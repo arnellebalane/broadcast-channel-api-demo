@@ -1,33 +1,24 @@
-const channel = new BroadcastChannel('messages');
-const messagesContainer = document.querySelector('.messages');
+const channel = new BroadcastChannel('counter');
+let value = 0;
 
-function createMessageElement(message, isSelf) {
-    const li = document.createElement('li');
-    li.textContent = message;
-    li.classList.add('message');
-    if (isSelf) {
-        li.classList.add('self');
-    }
-    return li;
+const displayedValue = document.querySelector('h1');
+const upButton = document.querySelector('.up');
+const downButton = document.querySelector('.down');
+
+updateValue(0);
+
+function updateValue(delta) {
+    value += delta;
+    displayedValue.textContent = value;
 }
 
-function addMessage(message, isSelf) {
-    const li = createMessageElement(message, isSelf);
-    messagesContainer.appendChild(li);
+channel.onmessage = (e) => updateValue(e.data);
 
-    const height = messagesContainer.getBoundingClientRect().height;
-    const scrollHeight = messagesContainer.scrollHeight;
-    messagesContainer.scrollTop = scrollHeight - height;
+upButton.onclick = (e) => {
+    channel.postMessage(1);
+    updateValue(1);
+};
+downButton.onclick = (e) => {
+    channel.postMessage(-1);
+    updateValue(-1);
 }
-
-document.querySelector('.message-form').addEventListener('submit', e => {
-    e.preventDefault();
-    const message = e.target.message.value;
-    e.target.message.value = '';
-    if (!message) return;
-
-    addMessage(message, true);
-    channel.postMessage(message);
-});
-
-channel.addEventListener('message', e => addMessage(e.data, false));
