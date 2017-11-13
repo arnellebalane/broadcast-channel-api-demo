@@ -1,6 +1,7 @@
 const displayedValue = document.querySelector('h1');
 const upButton = document.querySelector('.up');
 const downButton = document.querySelector('.down');
+const p = document.querySelector('p');
 
 if (window.BroadcastChannel) {
     const channel = new BroadcastChannel('counter');
@@ -26,6 +27,7 @@ if (window.BroadcastChannel) {
 } else {
     upButton.remove();
     downButton.remove();
+    p.remove();
 
     document.body.classList.add('not-supported');
     displayedValue.classList.add('not-supported');
