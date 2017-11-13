@@ -1,0 +1,129 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    color: #fff;
+    background-color: #009688;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    height: 100vh;
+    padding: 16px;
+    margin: 0 auto;
+}
+
+.title,
+.subtitle {
+    text-align: center;
+}
+
+.title {
+    margin-top: 32px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.subtitle {
+    margin: 2px 0;
+    font-weight: 300;
+}
+
+.subtitle span {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.messages-block {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+}
+
+.messages {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    padding-right: 4px;
+    margin: 0;
+    list-style: none;
+    overflow: auto;
+}
+
+.messages::-webkit-scrollbar {
+    width: 4px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.message {
+    max-width: 75%;
+    padding: 0.75em;
+    border-radius: 3px;
+    margin: 2px 0;
+    font-size: 14px;
+    word-break: break-all;
+    color: #333;
+    background-color: #fff;
+}
+
+.message.self {
+    align-self: flex-end;
+    background-color: #fff176;
+}
+
+.message-form {
+    flex-shrink: 0;
+    display: flex;
+    margin-top: 10px;
+}
+
+.message-form input {
+    flex-grow: 1;
+    padding: 0.5em;
+    border: 1px solid #fff9c4;
+    border-radius: 3px;
+    font: inherit;
+    font-weight: 300;
+    outline: none;
+}
+
+.message-form input:focus {
+    border-color: #fbc02d;
+}
+
+.message-form button {
+    padding: 0 1em;
+    border: none;
+    border-radius: 3px;
+    margin-left: 8px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #333;
+    background-color: #fff176;
+    outline: none;
+}
+
+.message-form button:active {
+    background-color: #fdd835;
+}
