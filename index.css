@@ -18,9 +18,19 @@ body {
     background-color: #607D8B;
 }
 
+body.not-supported {
+    background-color: #111;
+}
+
 h1 {
     font-size: 30vmin;
     font-weight: 300;
+}
+
+h1.not-supported {
+    margin-top: auto;
+    font-size: 8vmin;
+    text-align: center;
 }
 
 button {
