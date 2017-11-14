@@ -23,13 +23,14 @@ const mouse = e => {
 const handlePointerDown = e => dragging = true;
 const handlePointerUp = e => dragging = false;
 const handlePointerMove = e => {
-    if (!dragging) return;
-    const position = {
-        x: mouse(e).x / window.innerWidth * 100,
-        y: mouse(e).y / window.innerHeight * 100
-    };
-    channel.postMessage(position);
-    channel.onmessage({ data: position });
+    if (dragging) {
+        const position = {
+            x: mouse(e).x / window.innerWidth * 100,
+            y: mouse(e).y / window.innerHeight * 100
+        };
+        channel.postMessage(position);
+        channel.onmessage({ data: position });
+    }
 };
 
 model.onpointerdown = handlePointerDown;
