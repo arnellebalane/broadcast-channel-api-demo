@@ -1,75 +1,22 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-}
-
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-family: "Roboto Mono", monospace;
-    font-size: 3.75vmin;
-    font-weight: 300;
-    color: #FFEB3B;
-    background-color: #607D8B;
+    margin: 0;
+    overflow: hidden;
+    background-color: #FFF176;
 }
 
-body.not-supported {
-    background-color: #111;
-}
-
-h1 {
-    font-size: 30vmin;
-    font-weight: 300;
-}
-
-h1.not-supported {
-    margin-top: auto;
-    font-size: 8vmin;
-    text-align: center;
-}
-
-button {
-    display: inline-block;
-    width: 3em;
-    height: 3em;
-    border: none;
+.model {
+    width: 60vmin;
+    max-width: 200px;
     border-radius: 50%;
-    font: inherit;
-    font-weight: 700;
-    color: #fff;
-    outline: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: #00796B;
+    transform: translate(-50%, -50%);
 }
 
-button:active {
-    transform: scale(0.8);
-}
-
-button.down {
-    background-color: #F44336;
-}
-
-button.up {
-    margin-top: auto;
-    background-color: #4CAF50;
-}
-
-p {
-    margin-top: auto;
-}
-
-.github-link {
+.model::before {
+    content: "";
     display: block;
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    margin-top: auto;
-    margin-bottom: 3vmin;
-    font-size: 0.75em;
-    text-decoration: none;
-    color: inherit;
-    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 100%;
 }
