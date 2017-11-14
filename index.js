@@ -2,6 +2,9 @@ if (!window.BroadcastChannel) {
     throw new Error('BroadcastChannel API is not supported :(');
 }
 
+const unsupported = document.querySelector('.unsupported');
+unsupported.remove();
+
 const model = document.querySelector('.model');
 const channel = new BroadcastChannel('demo');
 

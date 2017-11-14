@@ -1,7 +1,7 @@
 body {
     margin: 0;
     overflow: hidden;
-    background-color: #FFF176;
+    background-color: #FFCC80;
 }
 
 .model {
@@ -19,4 +19,26 @@ body {
     content: "";
     display: block;
     padding-top: 100%;
+}
+
+.unsupported {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+
+    font-family: "Roboto Mono", monospace;
+    font-size: 32px;
+    font-size: 300;
+    text-align: center;
+
+    color: #FFEB3B;
+    background-color: #111;
 }
